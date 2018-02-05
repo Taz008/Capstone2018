@@ -17,7 +17,9 @@ import { CourseAssessmentStudentPaneComponent } from './course-assessment-worksh
 import { ComponentNameComponent } from './component-name/component-name.component';
 import { NotesInfoForMiscNotesTabService } from './services/notes-info-for-misc-notes-tab.service';
 import { StudentInfoForBioAndAdmissionsPlacementTabService } from './services/student-info-for-bio-and-admissions-placement-tab.service';
-import { CourseInformationService } from './services/course-information-service.service'
+import { CourseInformationService } from './services/course-information-service.service';
+import { StudentDataShareServiceService } from './services/student-data-share-service.service'; 
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -37,9 +39,10 @@ import { CourseInformationService } from './services/course-information-service.
   imports: [
     BrowserModule,
     HttpClientModule,
-    HttpModule
+    HttpModule,
+    FormsModule
   ],
-  providers: [CourseInformationService, NotesInfoForMiscNotesTabService, StudentInfoForBioAndAdmissionsPlacementTabService, HttpClientModule],
+  providers: [CourseInformationService, NotesInfoForMiscNotesTabService, StudentInfoForBioAndAdmissionsPlacementTabService, HttpClientModule, StudentDataShareServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
