@@ -6,7 +6,7 @@ import { PACKAGE_ROOT_URL } from '@angular/core/src/application_tokens';
 @Injectable()
 export class StudentDataShareServiceService {
 
-  public student: StudentInfoForBioAndAdmissionsPlacementTab;
+  public student: StudentInfoForBioAndAdmissionsPlacementTab = new StudentInfoForBioAndAdmissionsPlacementTab("","","","","","","","","","","");
  //BehaviorSubject makes sure any component using this service will get up to date data.
  private shareStudentInfo = new BehaviorSubject<StudentInfoForBioAndAdmissionsPlacementTab>(this.student);
  
@@ -16,8 +16,8 @@ export class StudentDataShareServiceService {
  constructor() { }
 
  //calls next on behavioral subject to change its current value.
- changeStudent(student: StudentInfoForBioAndAdmissionsPlacementTab){
-  this.shareStudentInfo.next(student);
+ changeStudent(newstudent: StudentInfoForBioAndAdmissionsPlacementTab){
+  this.shareStudentInfo.next(newstudent);
  }
 
 }
