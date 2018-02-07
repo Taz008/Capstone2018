@@ -36,7 +36,7 @@ export class RecordPaneComponent implements OnInit {
   onclick(studentId: any){
     this.studentInfoService.getStudentInfo().subscribe((students: StudentInfoForBioAndAdmissionsPlacementTab[]) => {
       this.studentResults = students;
-      this.student = this.studentResults[0];
+      this.student = this.studentResults[studentId];
       this.data.changeStudent(this.student);
     });
     console.log(this.student.studentName);
